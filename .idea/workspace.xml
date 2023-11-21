@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/dao/DeliveryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/dao/FurnitureDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/dao/ProviderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/models/Delivery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/models/Furniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/models/Provider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/server/LogIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/server/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/services/DeliveryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/services/FurnitureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/services/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/services/ProviderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/java/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furniture_shop/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditFurniture.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditFurniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditProvider.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditUserTable.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AddEditUserTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/FurnituresTable.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/FurnituresTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/LogIn.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/LogIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Message.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/ProviderTable.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/ProviderTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/SignUp.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/UsersTable.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/UsersTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Delivery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Furniture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Provider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab4WEB_3/lab4WEB_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5client.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5server.rar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2YITejvmBG2sqJrc9Yy8CIWB8WP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/GARAGE/IdeaProjects/furniture_shop_client&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/GARAGE/IdeaProjects/furniture_shop_client/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\GARAGE\IdeaProjects\furniture_shop_client\src\main\java\GUI" />
+      <recent name="C:\Users\GARAGE\IdeaProjects\furniture_shop_client\src\main\java\models" />
+      <recent name="C:\Users\GARAGE\IdeaProjects\furniture_shop_client\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\GARAGE\IdeaProjects\furniture_shop_client\src\main\java\GUI" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="client.Client" />
+      <module name="furniture_shop_client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="" />
+      <created>1700212210069</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700212210069</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.EOFException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
