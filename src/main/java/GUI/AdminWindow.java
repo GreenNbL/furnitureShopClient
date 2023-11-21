@@ -64,7 +64,7 @@ public class AdminWindow extends JFrame {
                     break;
                 }
                 case 4: {
-                    UsersTable usersTable = new UsersTable(coos, cois);
+                    DeliveryTable deliveryTable =new DeliveryTable(coos, cois);
                     break;
                 }
             }

@@ -21,8 +21,8 @@ public class SignUp extends JFrame {
     private JTextField telNumberField;
     private JButton signUpButton;
     private JButton backButton;
-    ObjectOutputStream coos;
-    ObjectInputStream cois;
+    private ObjectOutputStream coos;
+    private ObjectInputStream cois;
     public SignUp(ObjectOutputStream coos, ObjectInputStream cois)
     {
         this.coos=coos;

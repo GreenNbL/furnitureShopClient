@@ -2,13 +2,14 @@ package models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "deliveries")
 public class Delivery implements Serializable {
     @Id
+    @Column(name = "id_delivery")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDelivery;
     @Column(name = "status")
@@ -48,5 +49,8 @@ public class Delivery implements Serializable {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+    public String toString() {
+        return "Date" + dateDelivery;
     }
 }

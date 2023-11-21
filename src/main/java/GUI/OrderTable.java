@@ -1,6 +1,5 @@
 package GUI;
 
-import client.Client;
 import models.User;
 
 import javax.swing.*;
@@ -13,27 +12,26 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersTable extends JFrame{
+public class OrderTable extends JFrame{
+    private JPanel OrdesTablePanel;
     private JPanel root;
     private JScrollPane scroll;
     private DefaultTableModel tableModel;
-    private JTable tableUsers;
+    private JTable tableOrders;
     private JButton AddButton;
     private JButton DeleteButton;
     private JButton EditButton;
-    private JPanel UsersTablePanel;
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
-    public UsersTable(ObjectOutputStream coos, ObjectInputStream cois)
+    public OrderTable(ObjectOutputStream coos, ObjectInputStream cois)
     {
         this.coos=coos;
         this.cois=cois;
         setVisible(true);
-        setContentPane(UsersTablePanel);
+        setContentPane(OrdesTablePanel);
         setLocationRelativeTo(null);
         setSize(500,300);
         this.addWindowListener(new WindowClosing());
@@ -47,27 +45,27 @@ public class UsersTable extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            TableModel model = tableUsers.getModel();
+            TableModel model = tableOrders.getModel();
             User user=new User();
-            user.setIdUser(Integer.valueOf(model.getValueAt(tableUsers.getSelectedRow(),0).toString()));
+            user.setIdUser(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),1)!=null)
-                user.setLogin(model.getValueAt(tableUsers.getSelectedRow(),1).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),1)!=null)
+                user.setLogin(model.getValueAt(tableOrders.getSelectedRow(),1).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),2)!=null)
-                user.setPassword(model.getValueAt(tableUsers.getSelectedRow(),2).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),2)!=null)
+                user.setPassword(model.getValueAt(tableOrders.getSelectedRow(),2).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),3)!=null)
-                user.setRole(model.getValueAt(tableUsers.getSelectedRow(),3).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),3)!=null)
+                user.setRole(model.getValueAt(tableOrders.getSelectedRow(),3).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),4)!=null)
-                user.setSurname(model.getValueAt(tableUsers.getSelectedRow(),4).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),4)!=null)
+                user.setSurname(model.getValueAt(tableOrders.getSelectedRow(),4).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),5)!=null)
-                user.setName(model.getValueAt(tableUsers.getSelectedRow(),5).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),5)!=null)
+                user.setName(model.getValueAt(tableOrders.getSelectedRow(),5).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),6)!=null)
-                user.setTel_number(model.getValueAt(tableUsers.getSelectedRow(),6).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),6)!=null)
+                user.setTel_number(model.getValueAt(tableOrders.getSelectedRow(),6).toString());
             try {
                 coos.writeObject("DeleteUser");
                 coos.writeObject(user);
@@ -82,28 +80,28 @@ public class UsersTable extends JFrame{
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TableModel model = tableUsers.getModel();
+            TableModel model = tableOrders.getModel();
             User user=new User();
-            user.setIdUser(Integer.valueOf(model.getValueAt(tableUsers.getSelectedRow(),0).toString()));
+            user.setIdUser(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),1)!=null)
-                user.setLogin(model.getValueAt(tableUsers.getSelectedRow(),1).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),1)!=null)
+                user.setLogin(model.getValueAt(tableOrders.getSelectedRow(),1).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),2)!=null)
-                user.setPassword(model.getValueAt(tableUsers.getSelectedRow(),2).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),2)!=null)
+                user.setPassword(model.getValueAt(tableOrders.getSelectedRow(),2).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),3)!=null)
-                user.setRole(model.getValueAt(tableUsers.getSelectedRow(),3).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),3)!=null)
+                user.setRole(model.getValueAt(tableOrders.getSelectedRow(),3).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),4)!=null)
-                user.setSurname(model.getValueAt(tableUsers.getSelectedRow(),4).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),4)!=null)
+                user.setSurname(model.getValueAt(tableOrders.getSelectedRow(),4).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),5)!=null)
-                user.setName(model.getValueAt(tableUsers.getSelectedRow(),5).toString());
+            if(model.getValueAt(tableOrders.getSelectedRow(),5)!=null)
+                user.setName(model.getValueAt(tableOrders.getSelectedRow(),5).toString());
 
-            if(model.getValueAt(tableUsers.getSelectedRow(),6)!=null)
-                user.setTel_number(model.getValueAt(tableUsers.getSelectedRow(),6).toString());
-            AddEditUserTable addEditUserTable =new AddEditUserTable(coos,cois,tableUsers,user);
+            if(model.getValueAt(tableOrders.getSelectedRow(),6)!=null)
+                user.setTel_number(model.getValueAt(tableOrders.getSelectedRow(),6).toString());
+            AddEditUserTable addEditUserTable =new AddEditUserTable(coos,cois, tableOrders,user);
             setVisible(false);
         }
     }
@@ -125,14 +123,14 @@ public class UsersTable extends JFrame{
         }
     }
     public void ShowData() {
-        Object[] columnTitle = {"id_user","Логин", "Пароль", "Роль", "Фамилия","Имя","Телефонный номер"};
+        Object[] columnTitle = {"id_order","id_user", "id_furniture", "id_delivery", "Количество","Общая стоимость ","Дата заказа"};
         tableModel = new DefaultTableModel(null, columnTitle);
-        tableUsers.setModel(tableModel);
+        tableOrders.setModel(tableModel);
         tableModel.getDataVector().removeAllElements();
         System.out.println("Connected in Action_dialog");
         try {
-            coos.writeObject("GetAllUsers");
-            List<User>users=new ArrayList<User>();
+            coos.writeObject("GetAllOrders");
+            List<User> users=new ArrayList<User>();
             users=(List<User>)cois.readObject();
             System.out.println(users);
             for(User user:users)

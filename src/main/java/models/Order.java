@@ -23,13 +23,13 @@ public class Order implements Serializable {
 //    @Column(name = "id_delivery")
 //    private int idDelivery;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_delivery")
     private Delivery delivery;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_furniture")
     private Furniture furniture;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_user")
     private User user;
 
