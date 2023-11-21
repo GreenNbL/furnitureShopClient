@@ -45,7 +45,7 @@ public class AddEditOrder extends JFrame{
         setVisible(true);
         setContentPane(orderAddEditPanel);
         setLocationRelativeTo(null);
-        setSize(500,300);
+        setSize(1000,300);
         this.addWindowListener(new WindowClosing());
         nameOfActionLabel.setText(nameOfAction);
         addButton.setText(nameOfAction);
@@ -89,47 +89,107 @@ public class AddEditOrder extends JFrame{
         setVisible(true);
         setContentPane(orderAddEditPanel);
         setLocationRelativeTo(null);
-        setSize(500,300);
+        setSize(1000,300);
         this.addWindowListener(new WindowClosing());
         nameOfActionLabel.setText("Редактирование заказа");
         addButton.setText("Редактировать");
         addButton.addActionListener(new EditAction());
         backButton.addActionListener(new backAction());
-//        loginField.setText(user.getLogin());
-//        surnameField.setText(user.getSurname());
-//        nameField.setText(user.getName());
-//        telNumberField.setText(user.getTel_number());
-//        if(user.getRole().equals("admin"))
-//        {
-//            adminCheckBox.setSelected(true);
-//            this.role="admin";
-//        }
-//        else
-//        {
-//            customerCheckBox.setSelected(true);
-//            this.role="customer";
-//        }
+        dateField.setText(order.getDateOrder().toString());
+        amountField.setText(String.valueOf(order.getAmount()));
+      try {
+            coos.writeObject("GetAllUsers");
+            List<User> users=new ArrayList<User>();
+            users=(List<User>)cois.readObject();
+            for (User user: users) {
+                usersComboBox.addItem(user.toString());
+            }
+            //usersComboBox.setSelectedIndex(order.getIdUser()-1);
+          for(int i=0;i<users.size();i++)
+          {
+              if(order.getIdUser()==users.get(i).getIdUser()) {
+                  usersComboBox.setSelectedIndex(i);
+                  break;
+              }
+          }
+
+            coos.writeObject("GetAllFurnitures");
+            List<Furniture> furnitures=new ArrayList<Furniture>();
+            furnitures=(List<Furniture>)cois.readObject();
+            for (Furniture furniture: furnitures) {
+                furnitureComboBox.addItem(furniture.toString());
+            }
+          for(int i=0;i<furnitures.size();i++)
+          {
+              if(order.getIdFurniture()==furnitures.get(i).getIdFurniture()) {
+                  furnitureComboBox.setSelectedIndex(i);
+                  break;
+              }
+          }
+
+            coos.writeObject("GetAllDeliveries");
+            List<Delivery> deliveries=new ArrayList<Delivery>();
+            deliveries=(List<Delivery>)cois.readObject();
+            for (Delivery delivery: deliveries) {
+                deliveryComboBox.addItem(delivery.toString());
+            }
+          for(int i=0;i<deliveries.size();i++)
+          {
+              if(order.getIdDelivery()==deliveries.get(i).getIdDelivery()) {
+                  deliveryComboBox.setSelectedIndex(i);
+                  break;
+              }
+          }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
     private class EditAction implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-//            TableModel model =  tableUsers.getModel();
-//            user.setLogin(loginField.getText());
-//            user.setPassword(passwordField.getText());
-//            user.setRole(role);
-//            user.setSurname(surnameField.getText());
-//            user.setName(nameField.getText());
-//            user.setTel_number(telNumberField.getText());
-//            try {
-//                coos.writeObject("EditUser");
-//                coos.writeObject(user);
-//                UsersTable usersTable = new UsersTable(coos, cois);
-//                JOptionPane.showMessageDialog(null, "Изменения проименены успешно!");
-//                setVisible(false);
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
+           Order order =new Order();
+            User user=new User();
+            Furniture furniture=new Furniture();
+            Delivery delivery=new Delivery();
+            System.out.println(dateField.getText());
+            order.setDateOrder(Date.valueOf(dateField.getText()));
+            order.setAmount(Integer.valueOf(amountField.getText()));
+            try {
+                System.out.println("FindDeliveryById");
+                coos.writeObject("FindDeliveryById");
+                coos.writeObject(FindFirstNumberInString(deliveryComboBox.getSelectedItem().toString()));
+                delivery=(Delivery)cois.readObject();
+                order.setDelivery(delivery);
+
+                System.out.println("FindUserById");
+                coos.writeObject("FindUserById");
+                coos.writeObject(FindFirstNumberInString(usersComboBox.getSelectedItem().toString()));
+                user=(User)cois.readObject();
+                order.setUser(user);
+
+                System.out.println("FindFurnitureById");
+                coos.writeObject("FindFurnitureById");
+                coos.writeObject(FindFirstNumberInString(furnitureComboBox.getSelectedItem().toString()));
+                furniture=(Furniture)cois.readObject();
+                order.setFurniture(furniture);
+
+                order.setTotalCost(order.getAmount()*furniture.getPrice());
+
+                System.out.println("AddOrder");
+                setVisible(false);
+                coos.writeObject("AddOrder");
+                coos.writeObject(order);
+                JOptionPane.showMessageDialog(null, "Изменения применены успешно!");
+                OrderTable orderTable = new OrderTable(coos, cois);
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
     private int FindFirstNumberInString(String str) {
@@ -174,6 +234,8 @@ public class AddEditOrder extends JFrame{
                 coos.writeObject(FindFirstNumberInString(furnitureComboBox.getSelectedItem().toString()));
                 furniture=(Furniture)cois.readObject();
                 order.setFurniture(furniture);
+
+                order.setTotalCost(order.getAmount()*furniture.getPrice());
 
                 System.out.println("AddOrder");
                 setVisible(false);

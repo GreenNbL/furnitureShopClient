@@ -1,5 +1,6 @@
 package GUI;
 
+import models.Furniture;
 import models.Order;
 import models.User;
 
@@ -45,34 +46,20 @@ public class OrderTable extends JFrame{
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-
             TableModel model = tableOrders.getModel();
-            User user=new User();
-            user.setIdUser(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),1)!=null)
-                user.setLogin(model.getValueAt(tableOrders.getSelectedRow(),1).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),2)!=null)
-                user.setPassword(model.getValueAt(tableOrders.getSelectedRow(),2).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),3)!=null)
-                user.setRole(model.getValueAt(tableOrders.getSelectedRow(),3).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),4)!=null)
-                user.setSurname(model.getValueAt(tableOrders.getSelectedRow(),4).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),5)!=null)
-                user.setName(model.getValueAt(tableOrders.getSelectedRow(),5).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),6)!=null)
-                user.setTel_number(model.getValueAt(tableOrders.getSelectedRow(),6).toString());
+            Order order=new Order();
+            System.out.println("FindOrderById");
             try {
-                coos.writeObject("DeleteUser");
-                coos.writeObject(user);
+                coos.writeObject("FindOrderById");
+                coos.writeObject(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
+                order=(Order)cois.readObject();
+                coos.writeObject("DeleteOrder");
+                coos.writeObject(order);
                 setVisible(false);
-                UsersTable usersTable = new UsersTable(coos, cois);
+                OrderTable orderTable = new OrderTable(coos, cois);
             } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
         }
@@ -82,27 +69,19 @@ public class OrderTable extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             TableModel model = tableOrders.getModel();
-            User user=new User();
-            user.setIdUser(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),1)!=null)
-                user.setLogin(model.getValueAt(tableOrders.getSelectedRow(),1).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),2)!=null)
-                user.setPassword(model.getValueAt(tableOrders.getSelectedRow(),2).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),3)!=null)
-                user.setRole(model.getValueAt(tableOrders.getSelectedRow(),3).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),4)!=null)
-                user.setSurname(model.getValueAt(tableOrders.getSelectedRow(),4).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),5)!=null)
-                user.setName(model.getValueAt(tableOrders.getSelectedRow(),5).toString());
-
-            if(model.getValueAt(tableOrders.getSelectedRow(),6)!=null)
-                user.setTel_number(model.getValueAt(tableOrders.getSelectedRow(),6).toString());
-            AddEditUserTable addEditUserTable =new AddEditUserTable(coos,cois, tableOrders,user);
+            Order order=new Order();
+            System.out.println("FindOrderById");
+            try {
+                coos.writeObject("FindOrderById");
+                coos.writeObject(Integer.valueOf(model.getValueAt(tableOrders.getSelectedRow(),0).toString()));
+                order=(Order)cois.readObject();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+            //AddEditUserTable addEditUserTable =new AddEditUserTable(coos,cois, tableOrders,user);
+            AddEditOrder addEditOrder =new AddEditOrder(coos,cois,tableOrders,order);
             setVisible(false);
         }
     }

@@ -86,7 +86,15 @@ public class AddEditFurniture extends JFrame {
                 for (Provider provider: providers) {
                     providerComboBox.addItem(provider.toString());
                 }
-                providerComboBox.setSelectedIndex(furniture.getIdProvider()-1);
+
+                for(int i=0;i<providers.size();i++)
+                {
+                    if(furniture.getIdProvider()==providers.get(i).getIdProvider()) {
+                        providerComboBox.setSelectedIndex(i);
+                        break;
+                    }
+                }
+                //providerComboBox.setSelectedIndex(furniture.getIdProvider()-1);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
