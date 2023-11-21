@@ -1,8 +1,7 @@
-package GUI;
+package GUI.AdminGUI;
 
 import models.Furniture;
 import models.Provider;
-import models.User;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

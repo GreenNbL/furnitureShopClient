@@ -1,4 +1,4 @@
-package GUI;
+package GUI.AdminGUI;
 
 import models.User;
 

@@ -1,7 +1,7 @@
 package GUI;
-import client.Client;
+import GUI.AdminGUI.AddEditProvider;
 import models.Provider;
-import models.User;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -12,7 +12,6 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

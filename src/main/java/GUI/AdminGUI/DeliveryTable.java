@@ -1,8 +1,6 @@
-package GUI;
+package GUI.AdminGUI;
 
-import client.Client;
 import models.Delivery;
-import models.User;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -15,7 +13,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Date;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

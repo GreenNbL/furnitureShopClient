@@ -1,5 +1,6 @@
-package GUI;
+package GUI.AdminGUI;
 
+import GUI.*;
 import client.Client;
 
 import javax.swing.*;

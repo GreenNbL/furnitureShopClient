@@ -74,7 +74,7 @@ public class SignUp extends JFrame {
                         JOptionPane.showMessageDialog(null, "Такой пользователь уже существует. Попробуйте войти в аккаунт, либо создайте нового.");
                     }else {
                         LogIn logIn=new LogIn(coos,cois);
-                        Message message = new Message("Вы зарегистрировались успешно!");
+                        JOptionPane.showMessageDialog(null, "Вы зарегистрировались успешно!");
                         setVisible(false);
                     }
                 } catch (IOException ex) {
