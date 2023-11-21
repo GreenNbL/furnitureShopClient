@@ -50,7 +50,10 @@ public class Delivery implements Serializable {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
-    public String toString() {
-        return "Date" + dateDelivery;
+    public String toString()
+    {
+        return "idDelivery: "+idDelivery+
+                " статус: "+status+
+                " дата доставки: "+dateDelivery;
     }
 }

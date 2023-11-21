@@ -83,4 +83,11 @@ public class Furniture implements Serializable {
     public void setOreders(List<Order> oreders) {
         this.oreders = oreders;
     }
+    public String toString()
+    {
+        return "idFurniture: "+idFurniture+
+                " мебель: "+nameFurniture+
+                " цена: "+price+
+                " штук в наличии: "+amounStock;
+    }
 }

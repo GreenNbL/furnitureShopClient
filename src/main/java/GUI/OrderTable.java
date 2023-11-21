@@ -1,5 +1,6 @@
 package GUI;
 
+import models.Order;
 import models.User;
 
 import javax.swing.*;
@@ -109,7 +110,7 @@ public class OrderTable extends JFrame{
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            AddEditUserTable addEditUserTable =new AddEditUserTable(coos,cois,"Добавление пользователя");
+            AddEditOrder addEditOrder =new AddEditOrder(coos,cois,"Добавление заказа");
             setVisible(false);
         }
     }
@@ -130,19 +131,20 @@ public class OrderTable extends JFrame{
         System.out.println("Connected in Action_dialog");
         try {
             coos.writeObject("GetAllOrders");
-            List<User> users=new ArrayList<User>();
-            users=(List<User>)cois.readObject();
-            System.out.println(users);
-            for(User user:users)
+            List<Order> orders=new ArrayList<Order>();
+            orders=(List<Order>)cois.readObject();
+            System.out.println(orders);
+            for(Order order:orders)
             {
                 Object[] data = {
-                        user.getIdUser(),
-                        user.getLogin(),
-                        user.getPassword(),
-                        user.getRole(),
-                        user.getSurname(),
-                        user.getName(),
-                        user.getTel_number()
+                        order.getIdOrder(),
+                        order.getIdUser(),
+                        order.getIdFurniture(),
+                        order.getIdDelivery(),
+                        order.getAmount(),
+                        order.getTotalCost(),
+                        order.getDateOrder()
+
                 };
                 tableModel.addRow(data);
             }

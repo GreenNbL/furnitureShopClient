@@ -26,6 +26,7 @@ public class AddEditFurniture extends JFrame {
     private JButton backButton;
     private JTextField furnitureNameField;
     private JTextField amountInstockField;
+    private JTextField dateField;
     private JComboBox providerComboBox;
     private ObjectOutputStream coos;
     private ObjectInputStream cois;

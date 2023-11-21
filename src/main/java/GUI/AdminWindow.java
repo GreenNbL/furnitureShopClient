@@ -56,7 +56,7 @@ public class AdminWindow extends JFrame {
                     break;
                 }
                 case 2: {
-                    UsersTable usersTable = new UsersTable(coos, cois);
+                    OrderTable orderTable = new OrderTable(coos, cois);
                     break;
                 }
                 case 3: {

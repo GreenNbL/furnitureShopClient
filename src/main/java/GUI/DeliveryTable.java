@@ -80,12 +80,8 @@ public class DeliveryTable extends JFrame {
             if(model.getValueAt(tableDeliveries.getSelectedRow(),1)!=null)
                 delivery.setStatus(model.getValueAt(tableDeliveries.getSelectedRow(),1).toString());
 
-            //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S");
-            if(model.getValueAt(tableDeliveries.getSelectedRow(),2)!=null) {
-                System.out.println(model.getValueAt(tableDeliveries.getSelectedRow(),2).toString());
+            if(model.getValueAt(tableDeliveries.getSelectedRow(),2)!=null)
                 delivery.setDateDelivery(Date.valueOf(model.getValueAt(tableDeliveries.getSelectedRow(),2).toString()));
-            }
-
 
             AddEditDelivery addEditDelivery=new AddEditDelivery(coos,cois, tableDeliveries,delivery);
             setVisible(false);

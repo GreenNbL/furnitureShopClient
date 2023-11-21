@@ -89,13 +89,13 @@ public class User implements Serializable {
     }
     public String toString()
     {
-        return "User:" +
-                "\nlogin: "+login+
-                "\npassword: "+password+
-                "\nrole: "+role+
-                "\nsurname: "+surname+
-                "\nname: "+name+
-                "\ntelephone number: "+tel_number;
+        return "idUser: "+idUser+
+                " login: "+login+
+                " password: "+password+
+                " role: "+role+
+                " surname: "+surname+
+                " name: "+name+
+                " telephone number: "+tel_number;
 
 
     }
