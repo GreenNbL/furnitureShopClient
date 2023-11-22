@@ -25,8 +25,8 @@ public class AdminWindow extends JFrame {
             "4. Поставщики",
             "5. Доставки"
     };
-    ObjectOutputStream coos;
-    ObjectInputStream cois;
+    private ObjectOutputStream coos;
+    private ObjectInputStream cois;
     public AdminWindow(ObjectOutputStream coos, ObjectInputStream cois)
     {
         this.coos=coos;

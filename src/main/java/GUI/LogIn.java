@@ -1,6 +1,7 @@
 package GUI;
 
 import GUI.AdminGUI.AdminWindow;
+import GUI.CustomerGUI.CustomerWindow;
 import client.Client;
 import models.User;
 
@@ -58,11 +59,19 @@ public class LogIn extends JFrame{
                 userDB=(User)cois.readObject();
                 if(userDB==null) {
                     JOptionPane.showMessageDialog(null, "Нет такого пользователя. Повторите попытку или зарегистрируйтесь.");
+                    passwordField.setText("");
                 }
                 else
                 {
-                    AdminWindow admin=new AdminWindow(coos,cois);
-                    setVisible(false);
+                    if(userDB.getRole()=="admin") {
+                        AdminWindow admin = new AdminWindow(coos, cois);
+                        setVisible(false);
+                    }
+                    else {
+                        CustomerWindow customerWindow = new CustomerWindow(coos, cois,userDB);
+                        setVisible(false);
+                    }
+
                 }
                     //System.out.println("vse ok");
             } catch (IOException ex) {

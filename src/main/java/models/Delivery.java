@@ -16,6 +16,8 @@ public class Delivery implements Serializable {
     private String status;
     @Column(name = "date_delivery")
     private Date dateDelivery;
+    @Column(name = "adress")
+    private String adress;
     @OneToMany(mappedBy = "delivery", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders;
 
@@ -55,5 +57,13 @@ public class Delivery implements Serializable {
         return "idDelivery: "+idDelivery+
                 " статус: "+status+
                 " дата доставки: "+dateDelivery;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 }

@@ -1,5 +1,4 @@
-package GUI;
-import GUI.AdminGUI.AddEditProvider;
+package GUI.AdminGUI;
 import models.Provider;
 
 import javax.swing.*;

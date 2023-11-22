@@ -68,10 +68,8 @@ public class SignUp extends JFrame {
                     coos.writeObject("SignUp");
                     coos.writeObject(user);
                     if(cois.readObject().toString().equals("there is such user")){
-                        //setEnabled(false);
-                        //Message message = new Message("Такой пользователь уже существует." +
-                          //      " Попробуйте войти в аккаунт, либо создайте нового.");
                         JOptionPane.showMessageDialog(null, "Такой пользователь уже существует. Попробуйте войти в аккаунт, либо создайте нового.");
+                        passwordField.setText("");
                     }else {
                         LogIn logIn=new LogIn(coos,cois);
                         JOptionPane.showMessageDialog(null, "Вы зарегистрировались успешно!");

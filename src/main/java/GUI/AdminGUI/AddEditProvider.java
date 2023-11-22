@@ -2,9 +2,8 @@ package GUI.AdminGUI;
 
 import javax.swing.*;
 
-import GUI.ProviderTable;
 import models.Provider;
-import models.User;
+
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
