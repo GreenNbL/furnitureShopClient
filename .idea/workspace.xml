@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="Update packages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CatalogWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CatalogWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PreviousOrdersWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PreviousOrdersWindow.java" afterDir="false" />
+    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="Added custom,catalog,package,previousOrdersWindow">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ProviderTable.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/ProviderTable.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ProviderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/ProviderTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CatalogWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CatalogWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PackageWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PreviousOrdersWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/PreviousOrdersWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,9 +46,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "193",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "394",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "274",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client",
+    "last_opened_file_path": "C:/Users/GARAGE/IdeaProjects/furniture_shop",
     "onboarding.tips.debug.path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
@@ -121,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700594616459</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added custom,catalog,package,previousOrdersWindow">
+      <option name="closed" value="true" />
+      <created>1700684460465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700684460465</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +141,8 @@
     <MESSAGE value="Added Сreat and read to Order Entity" />
     <MESSAGE value="CRUD for all entities" />
     <MESSAGE value="Update packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update packages" />
+    <MESSAGE value="Added custom,catalog,package,previousOrdersWindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added custom,catalog,package,previousOrdersWindow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

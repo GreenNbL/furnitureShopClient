@@ -40,7 +40,8 @@ public class CustomerWindow extends JFrame{
         catalogButton.addActionListener(new catalogAction());
         packageButton.addActionListener(new  packageAction());
         yourOrdersButton.addActionListener(new yourOrdersAction());
-        System.out.println(user.getIdUser());
+        deliveryButton.addActionListener(new activeDeliveriesAction());
+        nameField.setText(user.getSurname()+" "+user.getName());
 
     }
     public CustomerWindow(ObjectOutputStream coos, ObjectInputStream cois,User user)
@@ -57,8 +58,19 @@ public class CustomerWindow extends JFrame{
         catalogButton.addActionListener(new catalogAction());
         packageButton.addActionListener(new  packageAction());
         yourOrdersButton.addActionListener(new yourOrdersAction());
-        System.out.println(user.getIdUser());
+        nameField.setText(user.getSurname()+" "+user.getName());
+        deliveryButton.addActionListener(new activeDeliveriesAction());
 
+    }
+    private class activeDeliveriesAction implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("чунга чанга");
+            ActiveDeliveries activeDeliveries = new ActiveDeliveries(coos, cois,user);
+            System.out.println("чунга чанга");
+            setVisible(false);
+        }
     }
     private class yourOrdersAction implements ActionListener
     {

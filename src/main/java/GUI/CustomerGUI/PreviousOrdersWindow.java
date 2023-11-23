@@ -77,9 +77,9 @@ public class PreviousOrdersWindow extends JFrame {
             {
                 String delivery;
                 if(order.getDelivery()!=null)
-                    delivery="доставляется";
+                    delivery = order.getDelivery().getStatus();
                 else
-                    delivery="доставлен";
+                    delivery="самовывоз";
                 String  furniture=order.getFurniture().getNameFurniture()+" "+order.getFurniture().getProvider().getCountry()+" "+order.getFurniture().getProvider().getCompany();
                 Object[] data = {
                         order.getIdOrder()+1,

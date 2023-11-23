@@ -76,7 +76,10 @@ public class PackageWindow extends JFrame{
                     JOptionPane.showMessageDialog(null, "У вас пустая корзина! \nДобавьте мебель из каталога для того, чтобы выполнить заказ.");
                 else {
                     System.out.println("AddOrder");
+                    System.out.println("AddDelivery");
                     for(Order order:orders) {
+                        coos.writeObject("AddDelivery");
+                        coos.writeObject(order.getDelivery());
                         coos.writeObject("AddOrder");
                         coos.writeObject(order);
                     }
@@ -111,7 +114,7 @@ public class PackageWindow extends JFrame{
                 if(order.getDelivery()!=null)
                     delivery="доставляется";
                 else
-                    delivery="доставлен";
+                    delivery="самовывоз";
                 String  furniture=order.getFurniture().getNameFurniture()+" "+order.getFurniture().getProvider().getCountry()+" "+order.getFurniture().getProvider().getCompany();
                 Object[] data = {
                         order.getIdOrder()+1,

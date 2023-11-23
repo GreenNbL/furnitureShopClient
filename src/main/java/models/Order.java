@@ -122,7 +122,7 @@ public class Order implements Serializable {
 
     public String toString()
     {
-        return "idProvider: "+ idOrder+
+        return "idOrder: "+ idOrder+
                 " amount: "+ amount;
     }
 }

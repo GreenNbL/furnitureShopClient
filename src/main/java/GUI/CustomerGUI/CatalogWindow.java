@@ -76,7 +76,7 @@ public class CatalogWindow extends JFrame {
                 LocalDate currentDate = LocalDate.now();
                 delivery.setDateDelivery(Date.valueOf(currentDate.plusDays(2)));
                 delivery.setAdress(adressField.getText());
-                delivery.setStatus("performed");
+                delivery.setStatus("доставляется");
                 order.setDelivery(delivery);
             }
             System.out.println(order.getUser().getIdUser());
