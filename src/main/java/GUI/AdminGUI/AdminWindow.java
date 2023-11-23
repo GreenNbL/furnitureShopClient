@@ -1,6 +1,8 @@
 package GUI.AdminGUI;
 
 import GUI.*;
+import GUI.Statistics.ManuallyMonthWindow;
+import GUI.Statistics.MonthWindow;
 import client.Client;
 
 import javax.swing.*;
@@ -15,12 +17,19 @@ public class AdminWindow extends JFrame {
     private JComboBox statisticComboBox;
     private JButton exitButton;
     private JButton openButton;
-    private JButton openButton2;
+    private JButton applyButton;
     private JPanel AdminPanel;
     private JComboBox entityBox;;
     String[] items = {
             "1. Пользователи",
             "2. Мебель",
+            "3. Заказы",
+            "4. Поставщики",
+            "5. Доставки"
+    };
+    Object[] itemsStatistics = {
+            "1. Рассчитать прибыль за месяц",
+            "2. Рассчитать прибыль за промежуток времени",
             "3. Заказы",
             "4. Поставщики",
             "5. Доставки"
@@ -34,11 +43,45 @@ public class AdminWindow extends JFrame {
         setVisible(true);
         setContentPane(AdminPanel);
         setLocationRelativeTo(null);
-        setSize(500,300);
+        setSize(700,300);
         exitButton.addActionListener(new ExitAction());
         this.addWindowListener(new WindowClosing());
-        addItemsEntituComboBox();
+        addItemsEntityComboBox();
+        addItemsStatisticsComboBox();
         openButton.addActionListener(new OpenAction());
+        applyButton.addActionListener(new  ApplyAction());
+    }
+    private class ApplyAction implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int number=statisticComboBox.getSelectedIndex();
+            System.out.println(statisticComboBox.getSelectedItem());
+            switch(number)
+            {
+                case 0: {
+                   MonthWindow monthWindow=new MonthWindow(coos, cois);
+                    break;
+                }
+                case 1: {
+                   ManuallyMonthWindow manuallyMonthWindow = new ManuallyMonthWindow(coos, cois);
+                    break;
+                }
+                case 2: {
+                    OrderTable orderTable = new OrderTable(coos, cois);
+                    break;
+                }
+                case 3: {
+                    ProviderTable providerTable = new ProviderTable(coos, cois);
+                    break;
+                }
+                case 4: {
+                    DeliveryTable deliveryTable =new DeliveryTable(coos, cois);
+                    break;
+                }
+            }
+
+        }
     }
     private class OpenAction implements ActionListener
     {
@@ -72,11 +115,18 @@ public class AdminWindow extends JFrame {
 
         }
     }
-    private void addItemsEntituComboBox()
+    private void addItemsEntityComboBox()
     {
         for(int i=0;i<items.length;i++)
         {
             entityBox.addItem(items[i]);
+        }
+    }
+    private void addItemsStatisticsComboBox()
+    {
+        for(int i=0;i<itemsStatistics.length;i++)
+        {
+            statisticComboBox.addItem(itemsStatistics[i]);
         }
     }
 

@@ -18,12 +18,12 @@ import java.util.List;
 public class UsersTable extends JFrame{
     private JPanel root;
     private JScrollPane scroll;
-    private DefaultTableModel tableModel;
     private JTable tableUsers;
     private JButton AddButton;
     private JButton DeleteButton;
     private JButton EditButton;
     private JPanel UsersTablePanel;
+    private DefaultTableModel tableModel;
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
     public UsersTable(ObjectOutputStream coos, ObjectInputStream cois)

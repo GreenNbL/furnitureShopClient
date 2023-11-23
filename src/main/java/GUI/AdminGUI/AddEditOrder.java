@@ -50,8 +50,6 @@ public class AddEditOrder extends JFrame{
         nameOfActionLabel.setText(nameOfAction);
         addButton.setText(nameOfAction);
         addButton.addActionListener(new AddAction());
-//        customerCheckBox.addActionListener(new CustomerChoice());
-//        adminCheckBox.addActionListener(new AdminChoice());
         backButton.addActionListener(new backAction());
         try {
             coos.writeObject("GetAllUsers");

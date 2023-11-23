@@ -63,7 +63,7 @@ public class LogIn extends JFrame{
                 }
                 else
                 {
-                    if(userDB.getRole()=="admin") {
+                    if(userDB.getRole().equals("admin")) {
                         AdminWindow admin = new AdminWindow(coos, cois);
                         setVisible(false);
                     }
