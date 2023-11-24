@@ -1,9 +1,12 @@
 package GUI.AdminGUI;
 
 import GUI.*;
+import GUI.Statistics.BarCharts.CircleChart;
 import GUI.Statistics.ManuallyMonthWindow;
 import GUI.Statistics.MonthWindow;
+import GUI.Statistics.YearsWindow;
 import client.Client;
+import org.jfree.ui.RefineryUtilities;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,9 +33,9 @@ public class AdminWindow extends JFrame {
     Object[] itemsStatistics = {
             "1. Рассчитать прибыль за месяц",
             "2. Рассчитать прибыль за промежуток времени",
-            "3. Заказы",
-            "4. Поставщики",
-            "5. Доставки"
+            "3. Столбчатая диаграмма объема продаж",
+            "4. Круговая диаграмма объема продаж",
+            "5. Круговая диаграмма продаж мебели"
     };
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
@@ -68,15 +71,18 @@ public class AdminWindow extends JFrame {
                     break;
                 }
                 case 2: {
-                    OrderTable orderTable = new OrderTable(coos, cois);
+                    YearsWindow yearsWindow = new YearsWindow(coos, cois);
                     break;
                 }
                 case 3: {
-                    ProviderTable providerTable = new ProviderTable(coos, cois);
+                    YearsWindow yearsWindow = new YearsWindow(coos, cois,"Circle chart");
                     break;
                 }
                 case 4: {
-                    DeliveryTable deliveryTable =new DeliveryTable(coos, cois);
+                    CircleChart demo = new CircleChart("Круговая диаграмма по продажам мебели",coos,cois);
+                    demo.pack();
+                    RefineryUtilities.centerFrameOnScreen(demo);
+                    demo.setVisible(true);
                     break;
                 }
             }

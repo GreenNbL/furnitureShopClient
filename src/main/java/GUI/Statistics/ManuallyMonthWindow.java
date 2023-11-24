@@ -3,7 +3,6 @@ package GUI.Statistics;
 import GUI.AdminGUI.AdminWindow;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -15,8 +14,8 @@ import java.sql.Date;
 public class ManuallyMonthWindow extends JFrame{
     private JButton backButton;
     private JButton applyButton;
-    private JTextField monthField;
-    private JTextField yearField;
+    private JTextField startField;
+    private JTextField endField;
     private JPanel manuallyDatePanel;
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
@@ -37,59 +36,8 @@ public class ManuallyMonthWindow extends JFrame{
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String month=monthField.getText().replaceAll("\\s", "");
-            Date startDate=null;
-            Date endDate=null;
-            switch(month.toLowerCase()) {
-                case "январь":
-                    startDate=Date.valueOf(yearField.getText()+"-01-01");
-                    endDate=Date.valueOf(yearField.getText()+"-01-31");
-                    break;
-                case "февраль":
-                    startDate=Date.valueOf(yearField.getText()+"-02-01");
-                    endDate=Date.valueOf(yearField.getText()+"-02-28");
-                    break;
-                case "март":
-                    startDate=Date.valueOf(yearField.getText()+"-03-01");
-                    endDate=Date.valueOf(yearField.getText()+"-03-31");
-                    break;
-                case "апрель":
-                    startDate=Date.valueOf(yearField.getText()+"-04-01");
-                    endDate=Date.valueOf(yearField.getText()+"-04-30");
-                    break;
-                case "май":
-                    startDate=Date.valueOf(yearField.getText()+"-05-01");
-                    endDate=Date.valueOf(yearField.getText()+"-05-31");
-                    break;
-                case "июнь":
-                    startDate=Date.valueOf(yearField.getText()+"-06-01");
-                    endDate=Date.valueOf(yearField.getText()+"-06-30");
-                    break;
-                case "июль":
-                    startDate=Date.valueOf(yearField.getText()+"-07-01");
-                    endDate=Date.valueOf(yearField.getText()+"-07-31");
-                    break;
-                case "август":
-                    startDate=Date.valueOf(yearField.getText()+"-08-01");
-                    endDate=Date.valueOf(yearField.getText()+"-08-31");
-                    break;
-                case "сентябрь":
-                    startDate=Date.valueOf(yearField.getText()+"-09-01");
-                    endDate=Date.valueOf(yearField.getText()+"-09-30");
-                    break;
-                case "октябрь":
-                    startDate=Date.valueOf(yearField.getText()+"-10-01");
-                    endDate=Date.valueOf(yearField.getText()+"-10-31");
-                    break;
-                case "ноябрь":
-                    startDate=Date.valueOf(yearField.getText()+"-11-01");
-                    endDate=Date.valueOf(yearField.getText()+"-11-30");
-                    break;
-                case "декабрь":
-                    startDate=Date.valueOf(yearField.getText()+"-12-01");
-                    endDate=Date.valueOf(yearField.getText()+"-12-31");
-                    break;
-            }
+            Date startDate=Date.valueOf(startField.getText());
+            Date endDate=Date.valueOf(endField.getText());
             ProfitMonthWindow profitMonthWindow=new ProfitMonthWindow(coos,cois,startDate,endDate,"manually");
             setVisible(false);
         }
