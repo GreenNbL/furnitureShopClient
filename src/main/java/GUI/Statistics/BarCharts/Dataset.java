@@ -62,8 +62,31 @@ public class Dataset
             throw new RuntimeException(e);
         }
     }
+    public static int findByDateAndIdFurniture(ObjectOutputStream coos, ObjectInputStream cois,Date startDate, Date endDate,int id) {
+        int amount=0;
+        try {
+            coos.writeObject("GetOrderByPeriodAndIdFurniture");
+            coos.writeObject(startDate);
+            coos.writeObject(endDate);
+            coos.writeObject(id);
+            System.out.println(id);
+            List<Order> orders=new ArrayList<Order>();
+            orders=(List<Order>)cois.readObject();
+            System.out.println(orders);
+            if(orders!=null) {
+                for (Order order : orders) {
+                    amount += order.getAmount();
+                }
+            }
+            return amount;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public static int findAllOrders(ObjectOutputStream coos, ObjectInputStream cois,int idFurniture) {
-        int kol=0;
+        int amount=0;
         try {
             coos.writeObject("FindOrderByFurnitureId");
             coos.writeObject(idFurniture);
@@ -71,10 +94,10 @@ public class Dataset
             orders=(List<Order>)cois.readObject();
             if(orders!=null) {
                 for (Order order : orders) {
-                    kol += order.getAmount();
+                    amount += order.getAmount();
                 }
             }
-            return kol;
+            return amount;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -86,6 +109,17 @@ public class Dataset
         DefaultPieDataset dataset = new DefaultPieDataset();
         for (int i = 0; i < months.length; i++)
             dataset.setValue(months[i], findByDate(coos,cois,startDate.get(i),endDate.get(i)));
+        return dataset;
+    }
+    public static PieDataset createPieDatasetByDateAndIdFurniture(ObjectOutputStream coos, ObjectInputStream cois,Date startDate, Date endDate)
+    {
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        List<Furniture> furnitures=findAllFurniture(coos,cois);
+        for (int i = 0; i < furnitures.size(); i++)
+            dataset.setValue(furnitures.get(i).getNameFurniture()+" "
+                            +furnitures.get(i).getProvider().getCountry()+" "
+                            +furnitures.get(i).getProvider().getCompany()
+                    , findByDateAndIdFurniture(coos,cois,startDate,endDate,furnitures.get(i).getIdFurniture()));
         return dataset;
     }
     public static PieDataset createPieDatasetForFurniture(ObjectOutputStream coos, ObjectInputStream cois)

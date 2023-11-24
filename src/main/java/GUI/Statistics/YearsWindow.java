@@ -52,11 +52,39 @@ public class YearsWindow extends JFrame{
         backButton.addActionListener(new BackAction());
         applyButton.addActionListener(new ApplyAction2());
     }
+    public YearsWindow(ObjectOutputStream coos, ObjectInputStream cois,boolean bool)
+    {
+        this.coos=coos;
+        this.cois=cois;
+        setVisible(true);
+        setContentPane(yearsPanel);
+        setLocationRelativeTo(null);
+        setSize(500,300);
+        this.addWindowListener(new WindowClosing());
+        addYearComboBox();
+        backButton.addActionListener(new BackAction());
+        applyButton.addActionListener(new ApplyAction3());
+    }
     private void addYearComboBox()
     {
         for(int i=0;i<years.length;i++)
         {
             yearComboBox.addItem(years[i]);
+        }
+    }
+    private class ApplyAction3 implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // int numberOfMonth=monthsComboBox.getSelectedIndex()+1;
+            Date startDate=Date.valueOf( yearComboBox.getSelectedItem() + "-01-01");
+            Date endDate= Date.valueOf(yearComboBox.getSelectedItem() + "-12-31");
+
+            setVisible(false);
+            CircleChart demo = new CircleChart("Круговая диаграмма продаж за год",coos,cois,startDate,endDate);
+            demo.pack();
+            RefineryUtilities.centerFrameOnScreen(demo);
+            demo.setVisible(true);
         }
     }
 

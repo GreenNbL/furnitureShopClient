@@ -35,7 +35,8 @@ public class AdminWindow extends JFrame {
             "2. Рассчитать прибыль за промежуток времени",
             "3. Столбчатая диаграмма объема продаж",
             "4. Круговая диаграмма объема продаж",
-            "5. Круговая диаграмма продаж мебели"
+            "5. Круговая диаграмма продаж мебели",
+            "6. Круговая диаграмма продаж мебели за год "
     };
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
@@ -83,6 +84,10 @@ public class AdminWindow extends JFrame {
                     demo.pack();
                     RefineryUtilities.centerFrameOnScreen(demo);
                     demo.setVisible(true);
+                    break;
+                }
+                case 5: {
+                    YearsWindow yearsWindow = new YearsWindow(coos, cois,true);
                     break;
                 }
             }
