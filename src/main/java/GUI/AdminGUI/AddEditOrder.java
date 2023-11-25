@@ -35,7 +35,6 @@ public class AddEditOrder extends JFrame{
     private JComboBox usersComboBox;
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
-    private String role;
     private JTable tableOrders;
     private Order order;
     public AddEditOrder(ObjectOutputStream coos, ObjectInputStream cois,String nameOfAction)
@@ -148,44 +147,25 @@ public class AddEditOrder extends JFrame{
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-           Order order =new Order();
-            User user=new User();
-            Furniture furniture=new Furniture();
-            Delivery delivery=new Delivery();
+            order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()+order.getAmount());
+            System.out.println(order.getFurniture().getAmounStock()+order.getAmount());
             System.out.println(dateField.getText());
             order.setDateOrder(Date.valueOf(dateField.getText()));
             order.setAmount(Integer.valueOf(amountField.getText()));
             try {
-                System.out.println("FindDeliveryById");
-                coos.writeObject("FindDeliveryById");
-                coos.writeObject(FindFirstNumberInString(deliveryComboBox.getSelectedItem().toString()));
-                delivery=(Delivery)cois.readObject();
-                order.setDelivery(delivery);
-
-                System.out.println("FindUserById");
-                coos.writeObject("FindUserById");
-                coos.writeObject(FindFirstNumberInString(usersComboBox.getSelectedItem().toString()));
-                user=(User)cois.readObject();
-                order.setUser(user);
-
-                System.out.println("FindFurnitureById");
-                coos.writeObject("FindFurnitureById");
-                coos.writeObject(FindFirstNumberInString(furnitureComboBox.getSelectedItem().toString()));
-                furniture=(Furniture)cois.readObject();
-                order.setFurniture(furniture);
-
-                order.setTotalCost(order.getAmount()*furniture.getPrice());
-
-                System.out.println("AddOrder");
-                setVisible(false);
-                coos.writeObject("AddOrder");
+                order.setTotalCost(order.getAmount()*order.getFurniture().getPrice());
+                order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()-order.getAmount());
+                System.out.println("EditFurniture");
+                coos.writeObject("EditFurniture");
+                coos.writeObject(order.getFurniture());
+                System.out.println("EditOrder");
+                coos.writeObject("EditOrder");
                 coos.writeObject(order);
+                setVisible(false);
                 JOptionPane.showMessageDialog(null, "Изменения применены успешно!");
                 OrderTable orderTable = new OrderTable(coos, cois);
 
             } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            } catch (ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
         }
@@ -235,6 +215,10 @@ public class AddEditOrder extends JFrame{
 
                 order.setTotalCost(order.getAmount()*furniture.getPrice());
 
+                System.out.println("EditFurniture");
+                order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()-order.getAmount());
+                coos.writeObject("EditFurniture");
+                coos.writeObject(order.getFurniture());
                 System.out.println("AddOrder");
                 setVisible(false);
                 coos.writeObject("AddOrder");

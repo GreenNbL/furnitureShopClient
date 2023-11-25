@@ -59,7 +59,7 @@ public class SignUp extends JFrame {
         public void actionPerformed(ActionEvent e) {
                 User user = new User();
                 user.setLogin(loginField.getText());
-                user.setPassword(passwordField.getText());
+                user.setPassword(String.valueOf(passwordField.getText().hashCode()));
                 user.setRole("customer");
                 user.setSurname(surnameField.getText());
                 user.setName(nameField.getText());
@@ -83,5 +83,6 @@ public class SignUp extends JFrame {
 
         }
     }
+
 
 }

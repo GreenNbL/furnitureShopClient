@@ -21,7 +21,6 @@ public class ManuallyMonthWindow extends JFrame{
     private ObjectInputStream cois;
     public ManuallyMonthWindow(ObjectOutputStream coos, ObjectInputStream cois)
     {
-        System.out.println("хуй");
         this.coos=coos;
         this.cois=cois;
         setVisible(true);

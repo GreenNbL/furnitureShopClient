@@ -85,6 +85,19 @@ public class Dataset
             throw new RuntimeException(e);
         }
     }
+    public static int findByIdFurniture(List<Order> orders,int id) {
+        int amount=0;
+            if(orders!=null) {
+                for (Order order : orders) {
+                    if(order.getIdFurniture()==id) {
+                        System.out.println( order.getFurniture().getNameFurniture());
+                        amount += order.getAmount();
+                    }
+                }
+            }
+            System.out.println(amount);
+            return amount;
+    }
     public static int findAllOrders(ObjectOutputStream coos, ObjectInputStream cois,int idFurniture) {
         int amount=0;
         try {
@@ -103,6 +116,31 @@ public class Dataset
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static int searchInList(List<Order> orders, int id) {
+        for (int i = 0; i < orders.size(); i++) {
+            if (orders.get(i).getIdFurniture() == id) {
+                return 1;
+            }
+        }
+        return -1;
+    }
+    public static PieDataset createPieDatasetByListOrders(ObjectOutputStream coos, ObjectInputStream cois,List<Order> orders)
+    {
+        DefaultPieDataset dataset = new DefaultPieDataset();
+        List<Furniture> furnitures=findAllFurniture(coos,cois);
+        System.out.println(furnitures.size());
+        System.out.println(orders.size());
+        for (int i = 0; i < furnitures.size(); i++) {
+            if (searchInList(orders, furnitures.get(i).getIdFurniture()) == 1) {
+                    dataset.setValue(furnitures.get(i).getNameFurniture() + " " + furnitures.get(i).getProvider().getCountry() + " " +
+                                    furnitures.get(i).getProvider().getCompany(),
+                            findByIdFurniture(orders, furnitures.get(i).getIdFurniture())
+                    );
+                System.out.println();
+            }
+        }
+        return dataset;
     }
     public static PieDataset createPieDataset(ObjectOutputStream coos, ObjectInputStream cois,List<Date> startDate, List<Date> endDate)
     {

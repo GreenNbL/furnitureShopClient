@@ -84,7 +84,7 @@ public class AddEditUserTable extends JFrame {
         public void actionPerformed(ActionEvent e) {
             TableModel model =  tableUsers.getModel();
             user.setLogin(loginField.getText());
-            user.setPassword(passwordField.getText());
+            user.setPassword(String.valueOf(passwordField.getText().hashCode()));
             user.setRole(role);
             user.setSurname(surnameField.getText());
             user.setName(nameField.getText());
@@ -106,7 +106,7 @@ public class AddEditUserTable extends JFrame {
         public void actionPerformed(ActionEvent e) {
             User user = new User();
             user.setLogin(loginField.getText());
-            user.setPassword(passwordField.getText());
+            user.setPassword(String.valueOf(passwordField.getText().hashCode()));
             user.setRole(role);
             user.setSurname(surnameField.getText());
             user.setName(nameField.getText());

@@ -52,7 +52,7 @@ public class LogIn extends JFrame{
             User user=new User();
             User userDB=new User();
             user.setLogin(loginField.getText());
-            user.setPassword(passwordField.getText());
+            user.setPassword(String.valueOf(passwordField.getText().hashCode()));
             try {
                 coos.writeObject("LogIn");
                 coos.writeObject(user);

@@ -1,4 +1,5 @@
 package GUI.Statistics.BarCharts;
+import models.Order;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -67,6 +68,22 @@ public class CircleChart extends JFrame {
         this.endDate = endDate;
         dataset = Dataset.createPieDatasetByDateAndIdFurniture(coos,cois, startDate, endDate);
         chart = createChartByYear(dataset);
+        // Размещение диаграммы в панели
+        final ChartPanel chartPanel = new ChartPanel(chart);
+        chartPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+        setContentPane(chartPanel);
+        setVisible(true);
+        setLocationRelativeTo(null);
+    }
+    public CircleChart(final String title, ObjectOutputStream coos, ObjectInputStream cois,List<Order>orders)
+    {
+        super(title);
+        this.cois=cois;
+        this.coos=coos;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        dataset = Dataset.createPieDatasetByListOrders(coos,cois, orders);
+        chart = createChart(dataset);
         // Размещение диаграммы в панели
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(600, 400));

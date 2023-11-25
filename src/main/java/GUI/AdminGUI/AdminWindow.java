@@ -1,11 +1,14 @@
 package GUI.AdminGUI;
 
+import File.TextFileWriter;
 import GUI.*;
 import GUI.Statistics.BarCharts.CircleChart;
 import GUI.Statistics.ManuallyMonthWindow;
 import GUI.Statistics.MonthWindow;
 import GUI.Statistics.YearsWindow;
 import client.Client;
+import models.Order;
+import org.dom4j.Text;
 import org.jfree.ui.RefineryUtilities;
 
 import javax.swing.*;
@@ -13,8 +16,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminWindow extends JFrame {
     private JComboBox statisticComboBox;
@@ -36,7 +42,8 @@ public class AdminWindow extends JFrame {
             "3. Столбчатая диаграмма объема продаж",
             "4. Круговая диаграмма объема продаж",
             "5. Круговая диаграмма продаж мебели",
-            "6. Круговая диаграмма продаж мебели за год "
+            "6. Круговая диаграмма продаж мебели за год ",
+            "7. Записать заказы в файл "
     };
     private ObjectOutputStream coos;
     private ObjectInputStream cois;
@@ -88,6 +95,20 @@ public class AdminWindow extends JFrame {
                 }
                 case 5: {
                     YearsWindow yearsWindow = new YearsWindow(coos, cois,true);
+                    break;
+                }
+                case 6: {
+                    try {
+                        coos.writeObject("GetAllOrders");
+                        List<Order> orders=new ArrayList<Order>();
+                        orders=(List<Order>)cois.readObject();
+                        TextFileWriter.writeAllOrdersToFile(orders);
+                        JOptionPane.showMessageDialog(null,"Заказы записаны в файл успешно!");
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    } catch (ClassNotFoundException ex) {
+                        throw new RuntimeException(ex);
+                    }
                     break;
                 }
             }

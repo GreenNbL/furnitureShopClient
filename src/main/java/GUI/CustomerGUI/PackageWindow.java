@@ -77,9 +77,15 @@ public class PackageWindow extends JFrame{
                 else {
                     System.out.println("AddOrder");
                     System.out.println("AddDelivery");
+                    System.out.println("EditFurniture");
                     for(Order order:orders) {
-                        coos.writeObject("AddDelivery");
-                        coos.writeObject(order.getDelivery());
+                        order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()-order.getAmount());
+                        coos.writeObject("EditFurniture");
+                        coos.writeObject(order.getFurniture());
+                        if(order.getDelivery()!=null) {
+                            coos.writeObject("AddDelivery");
+                            coos.writeObject(order.getDelivery());
+                        }
                         coos.writeObject("AddOrder");
                         coos.writeObject(order);
                     }

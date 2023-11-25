@@ -47,7 +47,10 @@ public class CatalogWindow extends JFrame {
         this.addWindowListener(new WindowClosing());
         findAllFurnitures();
         for (Furniture furniture: furnitures) {
-            catalogComboBox.addItem(furniture.getNameFurniture()+" "+furniture.getPrice()+" руб. "+furniture.getProvider().getCountry()+" "+furniture.getProvider().getCompany());
+            if (furniture.getAmounStock() > 0) {
+                catalogComboBox.addItem(furniture.getNameFurniture() + " " + furniture.getPrice() + " руб. " + furniture.getProvider().getCountry() + " " + furniture.getProvider().getCompany());
+
+            }
         }
         noCheckBox.setSelected(true);
         adressField.setEditable(false);
@@ -56,8 +59,6 @@ public class CatalogWindow extends JFrame {
         backButton.addActionListener(new BackAction());
         confirmButton.addActionListener(new ConfirmAction());
         System.out.println(user.getIdUser());
-
-
     }
     private class ConfirmAction implements ActionListener
     {
