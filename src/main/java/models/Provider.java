@@ -17,7 +17,7 @@ public class Provider implements Serializable {
     private String company;
     @Column(name = "email")
     private String email;
-    @OneToMany(mappedBy = "provider", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "provider", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Furniture> furnitures;
 
     public int getIdProvider() {

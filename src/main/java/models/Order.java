@@ -22,7 +22,7 @@ public class Order implements Serializable {
     private double totalCost;
     @Column(name = "date_order")
     private Date dateOrder;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_delivery")
     private Delivery delivery;
     @ManyToOne(fetch = FetchType.EAGER)

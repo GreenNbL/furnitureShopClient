@@ -13,10 +13,15 @@ public class TextFileWriter {
     public static void writeAllOrdersToFile(List<Order>orders) {
             try (FileWriter writer = new FileWriter("Orders.txt", false)) {
                 for(Order order:orders) {
-                    writer.write(order.getFurniture().getNameFurniture() + " " + order.getFurniture().getProvider().getCountry() + " " +
-                            order.getFurniture().getProvider().getCompany() + " " +
-                            order.getAmount() + "шт. " +
-                            order.getTotalCost() + "руб.\n");
+                    if(order.getFurniture().getProvider()!=null)
+                        writer.write(order.getFurniture().getNameFurniture() + " " + order.getFurniture().getProvider().getCountry() + " " +
+                                order.getFurniture().getProvider().getCompany() + " " +
+                                order.getAmount() + "шт. " +
+                                order.getTotalCost() + "руб.\n");
+                    else
+                        writer.write(order.getFurniture().getNameFurniture() + " "+
+                                order.getAmount() + "шт. " +
+                                order.getTotalCost() + "руб.\n");
                 }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
@@ -25,10 +30,15 @@ public class TextFileWriter {
     public static void writeCustomerOrdersToFile(List<Order>orders) {
         try (FileWriter writer = new FileWriter("YourOrders.txt", false)) {
             for(Order order:orders) {
-                writer.write(order.getFurniture().getNameFurniture() + " " + order.getFurniture().getProvider().getCountry() + " " +
-                        order.getFurniture().getProvider().getCompany() + " " +
-                        order.getAmount() + "шт. " +
-                        order.getTotalCost() + "руб.\n");
+                if(order.getFurniture().getProvider()!=null)
+                    writer.write(order.getFurniture().getNameFurniture() + " " + order.getFurniture().getProvider().getCountry() + " " +
+                            order.getFurniture().getProvider().getCompany() + " " +
+                            order.getAmount() + "шт. " +
+                            order.getTotalCost() + "руб.\n");
+                else
+                    writer.write(order.getFurniture().getNameFurniture() + " "+
+                            order.getAmount() + "шт. " +
+                            order.getTotalCost() + "руб.\n");
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

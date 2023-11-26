@@ -151,11 +151,17 @@ public class FurnituresTable extends JFrame{
             List<Furniture> furnitures=new ArrayList<Furniture>();
             furnitures=(List<Furniture>)cois.readObject();
             System.out.println(furnitures);
+            String provider;
             for(Furniture furniture:furnitures)
             {
+                if( furniture.getProvider()==null)
+                    provider=null;
+                else
+                    provider=String.valueOf(furniture.getIdProvider());
+
                 Object[] data = {
                         furniture.getIdFurniture(),
-                        furniture.getIdProvider(),
+                        provider,
                         furniture.getNameFurniture(),
                         furniture.getPrice(),
                         furniture.getAmounStock()

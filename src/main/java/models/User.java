@@ -22,7 +22,7 @@ public class User implements Serializable {
     private String name;
     @Column(name = "tel_number")
     private String tel_number;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Order> orders;
     public int getIdUser() {
         return idUser;
