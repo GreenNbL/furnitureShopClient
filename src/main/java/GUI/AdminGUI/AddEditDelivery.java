@@ -63,15 +63,15 @@ public class AddEditDelivery extends JFrame{
         performedCheckBox.addActionListener(new PerformedChoice());
         backButton.addActionListener(new backAction());
         dateField1.setText(delivery.getDateDelivery().toString());
-        if(delivery.getStatus().equals("performed"))
+        if(delivery.getStatus().equals("доставляется"))
         {
             performedCheckBox.setSelected(true);
-            this.status="performed";
+            this.status="доставляется";
         }
         else
         {
             completedCheckBox.setSelected(true);
-            this.status="completed";
+            this.status="завершена";
         }
     }
     private class EditAction implements ActionListener
@@ -82,9 +82,9 @@ public class AddEditDelivery extends JFrame{
             delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
             delivery.setStatus(status);
             if(performedCheckBox.isSelected())
-                delivery.setStatus("performed");
+                delivery.setStatus("доставляется");
             else
-                delivery.setStatus("completed");
+                delivery.setStatus("завершена");
             try {
                 coos.writeObject("EditDelivery");
                 coos.writeObject(delivery);
@@ -130,11 +130,11 @@ public class AddEditDelivery extends JFrame{
         {
             if(performedCheckBox.isSelected()) {
                 completedCheckBox.setSelected(false);
-                status="performed";
+                status="доставляется";
             }
             else {
                 completedCheckBox.setSelected(true);
-                status = " completed";
+                status = "завершена";
             }
         }
     }
@@ -145,11 +145,11 @@ public class AddEditDelivery extends JFrame{
 
             if(completedCheckBox.isSelected()) {
                 performedCheckBox.setSelected(false);
-                status="completed";
+                status="завершена";
             }
             else {
                 performedCheckBox.setSelected(true);
-                status = " performed";
+                status = "доставляется";
             }
 
         }

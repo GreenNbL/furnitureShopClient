@@ -56,7 +56,7 @@ public class FurnituresTable extends JFrame{
                 Provider provider =new Provider();
                 try {
                     coos.writeObject("FindProviderById");
-                    coos.writeObject(model.getValueAt(tableFurnitures.getSelectedRow(),1));
+                    coos.writeObject(Integer.valueOf(model.getValueAt(tableFurnitures.getSelectedRow(),1).toString()));
                     provider=(Provider)cois.readObject();
                     furniture.setProvider(provider);
                 } catch (IOException ex) {

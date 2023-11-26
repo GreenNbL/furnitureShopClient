@@ -50,7 +50,7 @@ public class CircleChart extends JFrame {
         this.endDateList = endDateList;
         this.year=year;
         dataset = Dataset.createPieDataset(coos,cois, startDateList, endDateList);
-        chart = createChart(dataset);
+        chart = createChart2(dataset);
         // Размещение диаграммы в панели
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(600, 400));
@@ -83,13 +83,37 @@ public class CircleChart extends JFrame {
         this.startDate = startDate;
         this.endDate = endDate;
         dataset = Dataset.createPieDatasetByListOrders(coos,cois, orders);
-        chart = createChart(dataset);
+        chart = createChart3(dataset);
         // Размещение диаграммы в панели
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(600, 400));
         setContentPane(chartPanel);
         setVisible(true);
         setLocationRelativeTo(null);
+    }
+    private JFreeChart createChart3(final PieDataset dataset)
+    {
+        chart = ChartFactory.createPieChart("Диаграмма покупок все время",
+                dataset, true, false, true);
+        PiePlot plot = (PiePlot) chart.getPlot();
+        pslg = new StandardPieSectionLabelGenerator("{0} = {1}шт.",
+                NumberFormat.getNumberInstance(),
+                NumberFormat.getPercentInstance());
+        plot.setLabelGenerator(pslg);
+        plot.setLabelGap(0.02);
+        return chart;
+    }
+    private JFreeChart createChart2(final PieDataset dataset)
+    {
+        chart = ChartFactory.createPieChart("Диаграмма объема продаж за "+year+"год",
+                dataset, true, false, true);
+        PiePlot plot = (PiePlot) chart.getPlot();
+        pslg = new StandardPieSectionLabelGenerator("{0} = {1}руб.",
+                NumberFormat.getNumberInstance(),
+                NumberFormat.getPercentInstance());
+        plot.setLabelGenerator(pslg);
+        plot.setLabelGap(0.02);
+        return chart;
     }
     private JFreeChart createChart(final PieDataset dataset)
     {

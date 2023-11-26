@@ -8,7 +8,6 @@ import GUI.Statistics.MonthWindow;
 import GUI.Statistics.YearsWindow;
 import client.Client;
 import models.Order;
-import org.dom4j.Text;
 import org.jfree.ui.RefineryUtilities;
 
 import javax.swing.*;
@@ -28,7 +27,8 @@ public class AdminWindow extends JFrame {
     private JButton openButton;
     private JButton applyButton;
     private JPanel AdminPanel;
-    private JComboBox entityBox;;
+    private JComboBox entityBox;
+    ;
     String[] items = {
             "1. Пользователи",
             "2. Мебель",

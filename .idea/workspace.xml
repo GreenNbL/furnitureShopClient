@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="Finished 15 use cases">
+    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="Fixed deletion errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/File/TextFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/File/TextFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/FurnituresTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/FurnituresTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/OrderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/OrderTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Provider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Statistics/BarCharts/CircleChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Statistics/BarCharts/CircleChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Furniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Furniture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +51,7 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "193",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "274",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/GARAGE/IdeaProjects/furniture_shop",
+    "last_opened_file_path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client",
     "onboarding.tips.debug.path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
@@ -162,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700916545205</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed deletion errors">
+      <option name="closed" value="true" />
+      <created>1700997194236</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700997194236</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +214,8 @@
     <MESSAGE value="Added tree diagrams" />
     <MESSAGE value="Added one diagrams" />
     <MESSAGE value="Finished 15 use cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished 15 use cases" />
+    <MESSAGE value="Fixed deletion errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed deletion errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

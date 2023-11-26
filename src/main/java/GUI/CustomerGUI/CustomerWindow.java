@@ -1,6 +1,7 @@
 package GUI.CustomerGUI;
 
 import File.TextFileWriter;
+import GUI.LogIn;
 import GUI.Statistics.BarCharts.CircleChart;
 import client.Client;
 import models.Order;
@@ -82,7 +83,7 @@ public class CustomerWindow extends JFrame{
                 coos.writeObject(user.getIdUser());
                 List<Order>orders=new ArrayList<Order>();
                 orders=(List<Order>)cois.readObject();
-                CircleChart demo = new CircleChart("Круговая диаграмма по продажам мебели",coos,cois,orders);
+                CircleChart demo = new CircleChart("Круговая диаграмма покупок мебели",coos,cois,orders);
                 demo.pack();
                 RefineryUtilities.centerFrameOnScreen(demo);
                 demo.setVisible(true);
@@ -151,8 +152,8 @@ public class CustomerWindow extends JFrame{
     {
         @Override
         public void windowClosing(WindowEvent e) {
-            Client.closeApp();
-            System.exit(0);
+            LogIn logIn=new LogIn(coos,cois);
+            setVisible(false);
         }
     }
 

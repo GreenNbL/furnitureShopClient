@@ -115,6 +115,7 @@ public class OrderTable extends JFrame{
             {
                 String stm;
                 String user;
+                String fun;
                 if(order.getDelivery()==null)
                     stm=null;
                 else
@@ -123,10 +124,14 @@ public class OrderTable extends JFrame{
                     user=null;
                 else
                     user=String.valueOf(order.getIdUser());
+                if(  order.getFurniture()==null)
+                    fun=null;
+                else
+                    fun=String.valueOf(order.getIdFurniture());
                 Object[] data = {
                         order.getIdOrder(),
                         user,
-                        order.getIdFurniture(),
+                        fun,
                         stm,
                         order.getAmount(),
                         order.getTotalCost(),

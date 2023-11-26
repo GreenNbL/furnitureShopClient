@@ -113,8 +113,8 @@ public class ActiveDeliveries extends JFrame{
             this.orders=orders;
             for(Order order:orders)
             {
-
-                      //  System.out.println( order.getDelivery().getIdDelivery());
+                    if(order.getIdUser()==user.getIdUser()) {
+                        //  System.out.println( order.getDelivery().getIdDelivery());
                         String furniture = order.getFurniture().getNameFurniture() + " " + order.getFurniture().getProvider().getCountry() + " " + order.getFurniture().getProvider().getCompany();
                         Object[] data = {
                                 furniture,
@@ -124,6 +124,7 @@ public class ActiveDeliveries extends JFrame{
                                 order.getDateOrder()
                         };
                         tableModel.addRow(data);
+                    }
 
 
             }

@@ -22,7 +22,7 @@ public class Furniture implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_provider")
     private Provider provider;
-    @OneToMany(mappedBy = "furniture", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "furniture", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Order> oreders;
 
     public int getIdProvider(){return provider.getIdProvider();};
