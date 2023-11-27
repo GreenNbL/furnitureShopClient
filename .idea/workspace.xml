@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="last vesion">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Checkings/Checkings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditFurniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditFurniture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditUserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditUserTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" afterDir="false" />
-    </list>
+    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="added check incorrect input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,19 +32,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "193",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "274",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client",
-    "onboarding.tips.debug.path": "C:/Users/GARAGE/IdeaProjects/furniture_shop_client/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;193&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;274&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/GARAGE/IdeaProjects/furniture_shop_client&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/GARAGE/IdeaProjects/furniture_shop_client/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GARAGE\IdeaProjects\furniture_shop_client\src\main\java\GUI" />
@@ -222,7 +213,8 @@
     <MESSAGE value="Finished 15 use cases" />
     <MESSAGE value="Fixed deletion errors" />
     <MESSAGE value="last vesion" />
-    <option name="LAST_COMMIT_MESSAGE" value="last vesion" />
+    <MESSAGE value="added check incorrect input" />
+    <option name="LAST_COMMIT_MESSAGE" value="added check incorrect input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
