@@ -1,5 +1,6 @@
 package GUI.AdminGUI;
 
+import Checkings.Checkings;
 import models.Furniture;
 import models.Provider;
 
@@ -11,6 +12,7 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -126,8 +128,26 @@ public class AddEditFurniture extends JFrame {
                     furniture.setProvider(provider);
                     //furniture.setIdProvider(FindFirstNumberInString(providerComboBox.getSelectedItem().toString()));
                     furniture.setNameFurniture( furnitureNameField.getText());
-                    furniture.setPrice(Double.valueOf(costlField.getText()));
-                    furniture.setAmounStock(Integer.valueOf(amountInstockField.getText()));
+                    if(Checkings.ContainsLetters(costlField))
+                    {
+                        furniture.setPrice(Double.valueOf(costlField.getText()));
+                    }
+                    else
+                    {
+                        costlField.setText("");
+                        JOptionPane.showMessageDialog(null,"Цена введена неверно");
+                        return;
+                    }
+                    if(Checkings.ContainsLetters(amountInstockField))
+                    {
+                        furniture.setAmounStock(Integer.valueOf(amountInstockField.getText()));
+                    }
+                    else
+                    {
+                        amountInstockField.setText("");
+                        JOptionPane.showMessageDialog(null,"Количество введено неверно");
+                        return;
+                    }
                     coos.writeObject("EditFurniture");
                     coos.writeObject(furniture);
                     JOptionPane.showMessageDialog(null, "Изменения применены успешно.");
@@ -153,8 +173,26 @@ public class AddEditFurniture extends JFrame {
                     coos.writeObject(FindFirstNumberInString(providerComboBox.getSelectedItem().toString()));
                     provider=(Provider)cois.readObject();
                     furniture.setNameFurniture( furnitureNameField.getText());
-                    furniture.setPrice(Integer.valueOf(costlField.getText()));
-                    furniture.setAmounStock(Integer.valueOf(amountInstockField.getText()));
+                    if(Checkings.ContainsLetters(costlField))
+                    {
+                        furniture.setPrice(Double.valueOf(costlField.getText()));
+                    }
+                    else
+                    {
+                        costlField.setText("");
+                        JOptionPane.showMessageDialog(null,"Цена введена неверно");
+                        return;
+                    }
+                    if(Checkings.ContainsLetters(amountInstockField))
+                    {
+                        furniture.setAmounStock(Integer.valueOf(amountInstockField.getText()));
+                    }
+                    else
+                    {
+                        amountInstockField.setText("");
+                        JOptionPane.showMessageDialog(null,"Количество введено неверно");
+                        return;
+                    }
                     furniture.setProvider(provider);
                     coos.writeObject("AddFurniture");
                     coos.writeObject(furniture);

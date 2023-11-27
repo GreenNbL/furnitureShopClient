@@ -1,5 +1,6 @@
 package GUI.AdminGUI;
 
+import Checkings.Checkings;
 import models.*;
 
 import javax.swing.*;
@@ -64,7 +65,6 @@ public class AddEditOrder extends JFrame{
             for (Furniture furniture: furnitures) {
                 furnitureComboBox.addItem(furniture.toString());
             }
-
             coos.writeObject("GetAllDeliveries");
             List<Delivery> deliveries=new ArrayList<Delivery>();
             deliveries=(List<Delivery>)cois.readObject();
@@ -150,8 +150,26 @@ public class AddEditOrder extends JFrame{
             order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()+order.getAmount());
             System.out.println(order.getFurniture().getAmounStock()+order.getAmount());
             System.out.println(dateField.getText());
-            order.setDateOrder(Date.valueOf(dateField.getText()));
-            order.setAmount(Integer.valueOf(amountField.getText()));
+            if(Checkings.isValidDate(dateField))
+            {
+                order.setDateOrder(Date.valueOf(dateField.getText()));
+            }
+            else
+            {
+                dateField.setText("");
+                JOptionPane.showMessageDialog(null,"Дата введена неверно");
+                return;
+            }
+            if(Checkings.ContainsLetters(amountField))
+            {
+                order.setAmount(Integer.valueOf(amountField.getText()));
+            }
+            else
+            {
+                amountField.setText("");
+                JOptionPane.showMessageDialog(null,"Количество не может содержать буквы");
+                return;
+            }
             try {
                 order.setTotalCost(order.getAmount()*order.getFurniture().getPrice());
                 order.getFurniture().setAmounStock(order.getFurniture().getAmounStock()-order.getAmount());
@@ -192,8 +210,26 @@ public class AddEditOrder extends JFrame{
             Furniture furniture=new Furniture();
             Delivery delivery=new Delivery();
             System.out.println(dateField.getText());
-            order.setDateOrder(Date.valueOf(dateField.getText()));
-            order.setAmount(Integer.valueOf(amountField.getText()));
+            if(Checkings.isValidDate(dateField))
+            {
+                order.setDateOrder(Date.valueOf(dateField.getText()));
+            }
+            else
+            {
+                dateField.setText("");
+                JOptionPane.showMessageDialog(null,"Дата введена неверно");
+                return;
+            }
+            if(Checkings.ContainsLetters(amountField))
+            {
+                order.setAmount(Integer.valueOf(amountField.getText()));
+            }
+            else
+            {
+                amountField.setText("");
+                JOptionPane.showMessageDialog(null,"Количество не может содержать буквы");
+                return;
+            }
             try {
                 System.out.println("FindDeliveryById");
                 coos.writeObject("FindDeliveryById");

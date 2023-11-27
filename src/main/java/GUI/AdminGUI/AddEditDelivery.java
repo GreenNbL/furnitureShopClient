@@ -1,5 +1,6 @@
 package GUI.AdminGUI;
 
+import Checkings.Checkings;
 import models.Delivery;
 
 import javax.swing.*;
@@ -79,7 +80,17 @@ public class AddEditDelivery extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             TableModel model =  tableDeliveries.getModel();
-            delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
+            //delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
+            if(Checkings.isValidDate(dateField1))
+            {
+                delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
+            }
+            else
+            {
+                dateField1.setText("");
+                JOptionPane.showMessageDialog(null,"Дата введена неверно");
+                return;
+            }
             delivery.setStatus(status);
             if(performedCheckBox.isSelected())
                 delivery.setStatus("доставляется");
@@ -102,7 +113,16 @@ public class AddEditDelivery extends JFrame{
         public void actionPerformed(ActionEvent e) {
             Delivery delivery=new Delivery();
             delivery.setStatus(status);
-            delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
+            if(Checkings.isValidDate(dateField1))
+            {
+                delivery.setDateDelivery(Date.valueOf(dateField1.getText()));
+            }
+            else
+            {
+                dateField1.setText("");
+                JOptionPane.showMessageDialog(null,"Дата введена неверно");
+                return;
+            }
             try {
                 setVisible(false);
                 coos.writeObject("AddDelivery");

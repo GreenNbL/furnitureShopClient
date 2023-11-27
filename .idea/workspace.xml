@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="Fixed deletion errors">
+    <list default="true" id="c094c240-9903-4c09-9e63-65c424ef38c1" name="Changes" comment="last vesion">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Checkings/Checkings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditDelivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/FurnituresTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/FurnituresTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/OrderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/OrderTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/ActiveDeliveries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/CustomerGUI/CustomerWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Statistics/BarCharts/CircleChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Statistics/BarCharts/CircleChart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Furniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Furniture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditFurniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditFurniture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditUserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/AdminGUI/AddEditUserTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700997194236</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="last vesion">
+      <option name="closed" value="true" />
+      <created>1701034117178</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701034117178</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,7 +221,8 @@
     <MESSAGE value="Added one diagrams" />
     <MESSAGE value="Finished 15 use cases" />
     <MESSAGE value="Fixed deletion errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed deletion errors" />
+    <MESSAGE value="last vesion" />
+    <option name="LAST_COMMIT_MESSAGE" value="last vesion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

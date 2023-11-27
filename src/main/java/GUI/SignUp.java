@@ -2,7 +2,7 @@ package GUI;
 
 import client.Client;
 import models.User;
-
+import Checkings.Checkings;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,9 +61,37 @@ public class SignUp extends JFrame {
                 user.setLogin(loginField.getText());
                 user.setPassword(String.valueOf(passwordField.getText().hashCode()));
                 user.setRole("customer");
-                user.setSurname(surnameField.getText());
-                user.setName(nameField.getText());
-                user.setTel_number(telNumberField.getText());
+                if(Checkings.ContainsNumber(surnameField))
+                {
+                    user.setSurname(surnameField.getText());
+                }
+                else
+                {
+                    surnameField.setText("");
+                    JOptionPane.showMessageDialog(null,"Фамилия не может содержать цифры");
+                    return;
+                }
+                if(Checkings.ContainsNumber(nameField))
+                {
+                    user.setName(nameField.getText());
+                }
+                else
+                {
+                    nameField.setText("");
+                    JOptionPane.showMessageDialog(null,"Имя не может содержать цифры");
+                    return;
+                }
+                if(Checkings.IsPhoneNumberCorrect(telNumberField))
+                {
+                    user.setTel_number(telNumberField.getText());
+                }
+                else
+                {
+                    telNumberField.setText("");
+                    JOptionPane.showMessageDialog(null,"Номер телефона введен не верно");
+                    return;
+                }
+
                 try {
                     coos.writeObject("SignUp");
                     coos.writeObject(user);

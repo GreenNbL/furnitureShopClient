@@ -2,6 +2,7 @@ package GUI.AdminGUI;
 
 import javax.swing.*;
 
+import Checkings.Checkings;
 import models.Provider;
 
 import javax.swing.table.TableModel;
@@ -65,7 +66,16 @@ public class AddEditProvider extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             TableModel model =  tableProviders.getModel();
-            provider.setCountry(countryField.getText());
+            if(Checkings.ContainsNumber(countryField))
+            {
+                provider.setCountry(countryField.getText());
+            }
+            else
+            {
+                countryField.setText("");
+                JOptionPane.showMessageDialog(null,"Страна не может содержать цифры");
+                return;
+            }
             provider.setCompany(companyField.getText());
             provider.setEmail(emailField.getText());
             try {
@@ -84,7 +94,16 @@ public class AddEditProvider extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             Provider provider=new Provider();
-            provider.setCountry(countryField.getText());
+            if(Checkings.ContainsNumber(countryField))
+            {
+                provider.setCountry(countryField.getText());
+            }
+            else
+            {
+                countryField.setText("");
+                JOptionPane.showMessageDialog(null,"Страна не может содержать цифры");
+                return;
+            }
             provider.setCompany(companyField.getText());
             provider.setEmail(emailField.getText());
             try {

@@ -1,5 +1,6 @@
 package GUI.AdminGUI;
 
+import Checkings.Checkings;
 import models.User;
 
 import javax.swing.*;
@@ -86,9 +87,36 @@ public class AddEditUserTable extends JFrame {
             user.setLogin(loginField.getText());
             user.setPassword(String.valueOf(passwordField.getText().hashCode()));
             user.setRole(role);
-            user.setSurname(surnameField.getText());
-            user.setName(nameField.getText());
-            user.setTel_number(telNumberField.getText());
+            if(Checkings.ContainsNumber(surnameField))
+            {
+                user.setSurname(surnameField.getText());
+            }
+            else
+            {
+                surnameField.setText("");
+                JOptionPane.showMessageDialog(null,"Фамилия не может содержать цифры");
+                return;
+            }
+            if(Checkings.ContainsNumber(nameField))
+            {
+                user.setName(nameField.getText());
+            }
+            else
+            {
+                nameField.setText("");
+                JOptionPane.showMessageDialog(null,"Имя не может содержать цифры");
+                return;
+            }
+            if(Checkings.IsPhoneNumberCorrect(telNumberField))
+            {
+                user.setTel_number(telNumberField.getText());
+            }
+            else
+            {
+                telNumberField.setText("");
+                JOptionPane.showMessageDialog(null,"Номер телефона введен не верно");
+                return;
+            }
             try {
                 coos.writeObject("EditUser");
                 coos.writeObject(user);
@@ -108,9 +136,36 @@ public class AddEditUserTable extends JFrame {
             user.setLogin(loginField.getText());
             user.setPassword(String.valueOf(passwordField.getText().hashCode()));
             user.setRole(role);
-            user.setSurname(surnameField.getText());
-            user.setName(nameField.getText());
-            user.setTel_number(telNumberField.getText());
+            if(Checkings.ContainsNumber(surnameField))
+            {
+                user.setSurname(surnameField.getText());
+            }
+            else
+            {
+                surnameField.setText("");
+                JOptionPane.showMessageDialog(null,"Фамилия не может содержать цифры");
+                return;
+            }
+            if(Checkings.ContainsNumber(nameField))
+            {
+                user.setName(nameField.getText());
+            }
+            else
+            {
+                nameField.setText("");
+                JOptionPane.showMessageDialog(null,"Имя не может содержать цифры");
+                return;
+            }
+            if(Checkings.IsPhoneNumberCorrect(telNumberField))
+            {
+                user.setTel_number(telNumberField.getText());
+            }
+            else
+            {
+                telNumberField.setText("");
+                JOptionPane.showMessageDialog(null,"Номер телефона введен не верно");
+                return;
+            }
             try {
                 setVisible(false);
                 coos.writeObject("SignUp");
